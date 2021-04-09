@@ -12,7 +12,12 @@
    <hr>
    <p>{{product.description}}</p> <br>
    <h4>Rs. {{product.discounted_price}} <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small></h4> <br>
-   <a href="{% url 'add-to-cart' %}" class="btn btn-primary shadow px-5 py-2">Add to Cart</a>
+
+   <form action="/add-to-cart" class="d-inline">
+    <input type="hidden" name="prod_id" value={{product.id}} id="prod_id">
+    <button type="Submit" class="btn btn-primary shadow px-5 py-2 ms-4">Add to Cart ></button>   
+   </form>
+   
    <a href="{% url 'buy-now' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
    <h5 class="mt-5">Available Offers</h5>
    <ul>
